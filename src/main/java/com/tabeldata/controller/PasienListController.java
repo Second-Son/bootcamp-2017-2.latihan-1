@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  *
  * @author iyus
  */
-@WebServlet(urlPatterns={"/pasien/list","/pasien"})
+@WebServlet(urlPatterns={"/pasien/list","/pasien/"})
 public class PasienListController extends HttpServlet{
 
     @Override
