@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Ruang {
     public static Ruang ruang;
     private Integer id;
-    private String noRuangan;
+    private String noRuang;
     private Boolean kosong;
     
 }
