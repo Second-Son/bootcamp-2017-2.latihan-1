@@ -4,9 +4,10 @@
     Author     : iyus
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,17 +28,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>Fulan Bin Fulan</td>
-                    <td>Jln. Gang Buntu No10001</td>
-                    <td>30-10-1991</td>
-                    <td>
-                        <a href="#" >Edit</a>
-                        <a href="#" >Delete</a>
-                    </td>
-                </tr>
+                <c:forEach items="${listPasien}" var="seorangPasien" varStatus="index">
+                    <tr>
+                        <td>${index.count}</td>
+                        <td>${seorangPasien.id}</td>
+                        <td>${seorangPasien.nama}</td>
+                        <td>${seorangPasien.alamat}</td>
+                        <td>${seorangPasien.tanggalLahir}</td>
+                        <td>
+                            <a href="#" >Edit</a>
+                            <a href="#" >Delete</a>
+                        </td>
+                    </tr>
+                    
+                </c:forEach>
+                
             </tbody>
         </table>
         </center>

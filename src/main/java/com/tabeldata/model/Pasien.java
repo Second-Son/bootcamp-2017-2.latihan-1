@@ -5,6 +5,7 @@
  */
 package com.tabeldata.model;
 
+import java.sql.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,6 @@ public class Pasien {
     private Integer id;
     private String nama;
     private String alamat;
-    private Integer tanggalLahir;
+    private Date tanggalLahir;
     
 }
