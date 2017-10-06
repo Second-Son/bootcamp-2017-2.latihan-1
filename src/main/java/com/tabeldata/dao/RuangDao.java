@@ -9,6 +9,7 @@ import com.tabeldata.configs.KoneksiDatabase;
 import com.tabeldata.model.Dokter;
 import com.tabeldata.model.Ruang;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -46,6 +47,23 @@ public class RuangDao {
         statement.close();
         connection.close();
         return listRuang;
+    }
+
+    public void save(Ruang ruang) throws SQLException {
+        KoneksiDatabase koneksiDB = new KoneksiDatabase();
+        DataSource datasource = koneksiDB.getDataSource();
+        Connection connection = datasource.getConnection();
+        
+        //language=PostgreSQL
+        String sql = "INSERT INTO latihan_1.ruang (no_ruangan, kosong) VALUES (?, ?)";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        
+        statement.setString(1, ruang.getNoRuang());
+        statement.setBoolean(2, ruang.getKosong());
+        
+        statement.executeUpdate();
+        statement.close();
+        connection.close();
     }
     
 }
