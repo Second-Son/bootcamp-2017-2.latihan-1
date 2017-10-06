@@ -104,5 +104,20 @@ public class RuangDao {
         statement.close();
         connection.close();
     }
+
+    public void delete(Integer idRuang) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource dataSource = koneksiDatabase.getDataSource();
+        Connection connection = dataSource.getConnection();
+        
+        String sql = "DELETE from latihan_1.ruang where id = ?";
+        
+        PreparedStatement statement = connection.prepareStatement(sql);
+        
+        statement.setInt(1, idRuang);
+        statement.executeUpdate();
+        statement.close();
+        connection.close();
+    }
     
 }
