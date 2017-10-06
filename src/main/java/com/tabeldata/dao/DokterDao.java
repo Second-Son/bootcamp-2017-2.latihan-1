@@ -63,5 +63,44 @@ public class DokterDao {
         statement.close();
         connection.close();
     }
+
+    public Dokter findById(Integer idDokter) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource dataSource = koneksiDatabase.getDataSource();
+        Connection connection = dataSource.getConnection();
+        
+        String sql = "select id, nama, spesialis from latihan_1.dokter where id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, idDokter);
+        ResultSet resultSet = statement.executeQuery();
+        
+        Dokter dokter = new Dokter();
+        if(resultSet.next()){
+            dokter.setId(resultSet.getInt("id"));
+            dokter.setNama(resultSet.getString("nama"));
+            dokter.setSpesialis(resultSet.getString("spesialis"));
+        }
+        resultSet.close();
+        statement.close();
+        connection.close();
+        return dokter;
+    }
+
+    public void update(Dokter dokter) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource dataSource = koneksiDatabase.getDataSource();
+        Connection connection = dataSource.getConnection();
+        
+        String sql = "UPDATE latihan_1.dokter SET nama = ?, spesialis = ? WHERE id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        
+        statement.setString(1, dokter.getNama());
+        statement.setString(2, dokter.getSpesialis());
+        statement.setInt(3, dokter.getId());
+        
+        statement.executeUpdate();
+        statement.close();
+        connection.close();
+    }
     
 }
