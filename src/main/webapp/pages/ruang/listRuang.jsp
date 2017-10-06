@@ -33,8 +33,8 @@
                         <td>${sebuahRuang.noRuang}</td>
                         <td>${sebuahRuang.kosong}</td>
                         <td>
-                            <a href="${pageContext.servletContext.contextPath}/ruang/edit?kodeDokter=${sebuahRuang.id}" >Edit</a>
-                            <a href="${pageContext.servletContext.contextPath}/ruang/delete?kodeDokter=${sebuahRuang.id}" >Delete</a>
+                            <a href="${pageContext.servletContext.contextPath}/ruang/edit?kodeRuang=${sebuahRuang.id}" >Edit</a>
+                            <a href="${pageContext.servletContext.contextPath}/ruang/delete?kodeRuang=${sebuahRuang.id}" >Delete</a>
                         </td>
                     </tr>
                     
