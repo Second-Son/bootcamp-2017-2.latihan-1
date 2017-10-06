@@ -102,5 +102,20 @@ public class DokterDao {
         statement.close();
         connection.close();
     }
+
+    public void delete(Integer idDokter) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource dataSource = koneksiDatabase.getDataSource();
+        Connection connection = dataSource.getConnection();
+        
+        String sql = "DELETE from latihan_1.dokter where id = ?";
+        
+        PreparedStatement statement = connection.prepareStatement(sql);
+        
+        statement.setInt(1, idDokter);
+        statement.executeUpdate();
+        statement.close();
+        connection.close();
+    }
     
 }
