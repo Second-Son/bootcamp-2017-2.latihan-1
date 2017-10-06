@@ -25,14 +25,6 @@ public class PasienDao {
     
     }
     
-    public void delete(){
-    
-    }
-    
-    public void update() {
-    
-    }
-    
     public List<Pasien> findAll() throws SQLException{
         List<Pasien> listPasien = new ArrayList<>();
         KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
@@ -113,6 +105,21 @@ public class PasienDao {
         statement.setDate(3, pasien.getTanggalLahir());
         statement.setInt(4, pasien.getId());
         
+        statement.executeUpdate();
+        statement.close();
+        connection.close();
+    }
+
+    public void delete(Integer idPasien) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource dataSource = koneksiDatabase.getDataSource();
+        Connection connection = dataSource.getConnection();
+        
+        String sql = "DELETE from latihan_1.pasien where id = ?";
+        
+        PreparedStatement statement = connection.prepareStatement(sql);
+        
+        statement.setInt(1, idPasien);
         statement.executeUpdate();
         statement.close();
         connection.close();

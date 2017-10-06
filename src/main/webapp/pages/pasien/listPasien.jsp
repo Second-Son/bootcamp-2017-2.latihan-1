@@ -37,7 +37,7 @@
                         <td>${seorangPasien.tanggalLahir}</td>
                         <td>
                             <a href="${pageContext.servletContext.contextPath}/pasien/edit?kodePasien=${seorangPasien.id}" >Edit</a>
-                            <a href="#" >Delete</a>
+                            <a href="${pageContext.servletContext.contextPath}/pasien/delete?kodePasien=${seorangPasien.id}" >Delete</a>
                         </td>
                     </tr>
                     
