@@ -8,6 +8,7 @@ package com.tabeldata.dao;
 import com.tabeldata.configs.KoneksiDatabase;
 import com.tabeldata.model.Pasien;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -56,5 +57,23 @@ public class PasienDao {
         statement.close();
         connection.close();
         return listPasien;
+    }
+
+    public void save(Pasien pasien) throws SQLException {
+        KoneksiDatabase koneksiDB = new KoneksiDatabase();
+        DataSource datasource = koneksiDB.getDataSource();
+        Connection connection = datasource.getConnection();
+        
+        //language=PostgreSQL
+        String sql = "INSERT INTO latihan_1.pasien (nama, alamat, tanggal_lahir) VALUES (?, ?, ?)";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        
+        statement.setString(1, pasien.getNama());
+        statement.setString(2, pasien.getAlamat());
+        statement.setDate(3, pasien.getTanggalLahir());
+        
+        statement.executeUpdate();
+        statement.close();
+        connection.close();
     }
 }
