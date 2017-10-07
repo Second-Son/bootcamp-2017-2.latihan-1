@@ -41,7 +41,7 @@ public class RawatCheckoutController extends HttpServlet{
             Logger.getLogger(RawatCheckoutController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        //resp.sendRedirect(req.getServletContext().getContextPath() + "/rawat/");
+        resp.sendRedirect(req.getServletContext().getContextPath() + "/rawat/");
         
         
     }

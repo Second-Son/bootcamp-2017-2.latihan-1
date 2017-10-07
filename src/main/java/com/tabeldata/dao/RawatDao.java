@@ -97,23 +97,23 @@ public class RawatDao {
         DataSource datasource = koneksiDatabase.getDataSource();
         Connection connection = datasource.getConnection();
         
-//        String sql = "delete from latihan_1.rawat where id = ?";
-//        
-//        PreparedStatement statement = connection.prepareStatement(sql);
-//
-//        statement.setInt(1, idRawat);
-//        
-//        statement.executeUpdate();
-//        statement.close();
-//        connection.close();
+        String sql = "delete from latihan_1.rawat where id = ?";
         
-        String sql = "update latihan_1.rawat set waktu_checkout = now() where id = ?";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setInt(1, idRawat);
-        preparedStatement.executeUpdate();
-        preparedStatement.close();
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setInt(1, idRawat);
         
+        statement.executeUpdate();
+        statement.close();
         connection.close();
+        
+//        String sql = "update latihan_1.rawat set waktu_checkout = now() where id = ?";
+//        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+//        preparedStatement.setInt(1, idRawat);
+//        preparedStatement.executeUpdate();
+//        preparedStatement.close();
+//        
+//        connection.close();
     }
 
     public void checkout(Rawat kodeRuang) throws SQLException {
