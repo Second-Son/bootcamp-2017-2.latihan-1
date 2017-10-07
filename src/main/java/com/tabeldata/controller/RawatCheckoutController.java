@@ -27,15 +27,11 @@ public class RawatCheckoutController extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Rawat rawat = new Rawat();
+        
         
         try {
             Integer kodeRawat = Integer.valueOf(req.getParameter("kodeRawat"));
             new RawatDao().delete(kodeRawat);
-            
-            Integer kodeRuang = Integer.valueOf(req.getParameter("kodeRuang"));
-            rawat.setRuang(new RuangDao().fingById(kodeRuang));
-            new RawatDao().checkout(rawat);
             
         } catch (SQLException ex) {
             Logger.getLogger(RawatCheckoutController.class.getName()).log(Level.SEVERE, null, ex);
@@ -45,4 +41,18 @@ public class RawatCheckoutController extends HttpServlet{
         
         
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            Rawat rawat = new Rawat();
+            Integer kodeRuang = Integer.valueOf(req.getParameter("kodeRuang"));
+            rawat.setRuang(new RuangDao().fingById(kodeRuang));
+            new RawatDao().checkout(rawat);
+        } catch (SQLException ex) {
+            Logger.getLogger(RawatCheckoutController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
 }
