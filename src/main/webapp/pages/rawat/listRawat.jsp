@@ -11,20 +11,31 @@ Author     : iyus
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>List Rawat</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style.css">
 </head>
-<body>
+<body class="news">
+  <header>
+    <div class="nav">
+      <ul>
+        <li class="rawat"><a class="active" href="/latihan-1/rawat/">Rawat</a></li>
+        <li class="pasien"><a href="/latihan-1/pasien/">pasien</a></li>
+        <li class="dokter"><a href="/latihan-1/dokter/">Dokter</a></li>
+        <li class="ruangan"><a href="/latihan-1/ruang/">Ruangan</a></li>
+      </ul>
+    </div>
+  </header>
     <center>
     <h1>List Rawat</h1>
-    <table border="5">
+    <table class="yusuf-table yusuf-table-rounded">
         <thead>
             <tr>
-                <td>No</td>
-                <td>Nama Pasien</td>
-                <td>Nama Dokter</td>
-                <td>Ruangan Rawat</td>
-                <td>Tanggal Registrasi</td>
-                <td>Tanggal Checkout</td>
-                <td>Aksi</td>
+                <th>No</th>>
+                <th>Nama Pasien</th>
+                <th>Nama Dokter</th>
+                <th>Ruangan Rawat</th>
+                <th>Tanggal Registrasi</th>
+                <th>Tanggal Checkout</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -38,12 +49,12 @@ Author     : iyus
                 <td>${t.waktuCheckout}</td>
                 <td>
                     <a href="${pageContext.servletContext.contextPath}/rawat/checkout?kodeRawat=${t.id}&kodeRuang=${t.ruang.id}" >Checkout</a>
-                    <a href="${pageContext.servletContext.contextPath}/rawat/edit?kodeRawat=${t.id}" >Edit</a>
                 </td>
             </tr>                    
             </c:forEach>
         </tbody>
-    </table>
+    </table><br>
+    <a href="${pageContext.request.contextPath}/rawat/masuk"><button class="button"><span>TAMBAH PASIEN RAWAT</span></button></a>
     </center>
 </body>
 </html>

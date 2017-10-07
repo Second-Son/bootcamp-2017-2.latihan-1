@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+}
+ 
+.nav ul {
+  list-style: none;
+  background-color: #002e5b;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #1889f9;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+ 
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+ 
+  
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+ 
+}
+
+/* Button */
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #024689;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+  /* YANG DI BAWAH INI CSS UNTUK TABLE
+  */
+
+  .yusuf-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.yusuf-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    
+}
+.yusuf-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+}
+.yusuf-table-rounded {
+    border: none;
+}
+.yusuf-table-rounded thead th {
+    background-color: #07427c;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+}
+.yusuf-table-rounded thead th:first-child {
+    border-radius: 10px 0 0 0;
+}
+.yusuf-table-rounded thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+.yusuf-table-rounded tbody td {
+    border: none;
+    border-top: solid 1px #957030;
+    background-color: #6eb1f4;
+    font-size: 1.2em;
+}
+.yusuf-table-rounded tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+.yusuf-table-rounded tbody tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+
+
+/* BEDA LAGI*/
+

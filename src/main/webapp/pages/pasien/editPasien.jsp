@@ -10,8 +10,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit Pasien</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style.css">
     </head>
-    <body>
+    <body class="news">
+      <header>
+        <div class="nav">
+          <ul>
+            <li class="rawat"><a href="/latihan-1/rawat/">Rawat</a></li>
+            <li class="pasien"><a class="active" href="/latihan-1/pasien/">pasien</a></li>
+            <li class="dokter"><a href="/latihan-1/dokter/">Dokter</a></li>
+            <li class="ruangan"><a href="/latihan-1/ruang/">Ruangan</a></li>
+          </ul>
+        </div>
+      </header>
         <center>
         <h1>Edit Pasien</h1>
         <form action="${pageContext.servletContext.contextPath}/pasien/edit" method="post">

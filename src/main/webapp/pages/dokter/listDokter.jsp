@@ -11,18 +11,29 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>List Dokter</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style.css">
     </head>
-    <body>
+    <body class="news">
+      <header>
+        <div class="nav">
+          <ul>
+            <li class="rawat"><a href="/latihan-1/rawat/">Rawat</a></li>
+            <li class="pasien"><a href="/latihan-1/pasien/">pasien</a></li>
+            <li class="dokter"><a class="active" href="/latihan-1/dokter/">Dokter</a></li>
+            <li class="ruangan"><a href="/latihan-1/ruang/">Ruangan</a></li>
+          </ul>
+        </div>
+      </header>
         <center>
         <h1>List Dokter</h1>
-        <table border="5" cellpadding="10">
+        <table class="yusuf-table yusuf-table-rounded" cellpadding="10">
             <thead>
                 <tr>
-                    <td>No</td>
-                    <td>Id</td>
-                    <td>Nama Dokter</td>
-                    <td>Spesialis</td>
-                    <td>Aksi</td>
+                    <th>No</th>
+                    <th>Id</th>
+                    <th>Nama Dokter</th>
+                    <th>Spesialis</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,6 +53,8 @@
                 
             </tbody>
         </table>
+        <br>
+        <a href="${pageContext.request.contextPath}/dokter/new"><button class="button"><span>TAMBAH DOKTER</span></button></a>
         </center>
     </body>
 </html>
