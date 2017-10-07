@@ -23,6 +23,7 @@ Author     : iyus
                 <td>Nama Dokter</td>
                 <td>Ruangan Rawat</td>
                 <td>Tanggal Registrasi</td>
+                <td>Tanggal Checkout</td>
                 <td>Aksi</td>
             </tr>
         </thead>
@@ -34,8 +35,10 @@ Author     : iyus
                 <td>${t.dokter.nama}</td>
                 <td>${t.ruang.noRuang}</td>
                 <td>${t.waktuRegistrasi}</td>
+                <td>${t.waktuCheckout}</td>
                 <td>
-                    
+                    <a href="${pageContext.servletContext.contextPath}/rawat/checkout?kodeRawat=${t.id}&kodeRuang=${t.ruang.id}" >Checkout</a>
+                    <a href="${pageContext.servletContext.contextPath}/rawat/edit?kodeRawat=${t.id}" >Edit</a>
                 </td>
             </tr>                    
             </c:forEach>

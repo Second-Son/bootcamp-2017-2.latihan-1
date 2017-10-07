@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Rawat {
+    public static Rawat rawat;
     private Integer id;
     private Pasien pasien;
     private Dokter dokter;

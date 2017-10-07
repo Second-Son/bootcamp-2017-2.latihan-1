@@ -9,12 +9,14 @@ import com.tabeldata.configs.KoneksiDatabase;
 import com.tabeldata.model.Dokter;
 import com.tabeldata.model.Pasien;
 import com.tabeldata.model.Rawat;
+import static com.tabeldata.model.Rawat.rawat;
 import com.tabeldata.model.Ruang;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import static java.time.Instant.now;
 import java.util.ArrayList;
 import java.util.List;
 import javax.sql.DataSource;
@@ -70,7 +72,6 @@ public class RawatDao {
         KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
         DataSource dataSource = koneksiDatabase.getDataSource();
         Connection connection = dataSource.getConnection();
-        connection.setAutoCommit(false);
         
         String sql = "insert into latihan_1.rawat (pasien_id, dokter_id, ruang_id, waktu_registrasi) values (?, ?, ?, now())";
         
@@ -88,7 +89,45 @@ public class RawatDao {
         preparedStatement.executeUpdate();
         preparedStatement.close();
         
-        connection.commit();
+        connection.close();
+    }
+
+    public void delete(Integer idRawat) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource datasource = koneksiDatabase.getDataSource();
+        Connection connection = datasource.getConnection();
+        
+//        String sql = "delete from latihan_1.rawat where id = ?";
+//        
+//        PreparedStatement statement = connection.prepareStatement(sql);
+//
+//        statement.setInt(1, idRawat);
+//        
+//        statement.executeUpdate();
+//        statement.close();
+//        connection.close();
+        
+        String sql = "update latihan_1.rawat set waktu_checkout = now() where id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, idRawat);
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
+        
+        connection.close();
+    }
+
+    public void checkout(Rawat kodeRuang) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource dataSource = koneksiDatabase.getDataSource();
+        Connection connection = dataSource.getConnection();
+        
+        String sql = "update latihan_1.ruang set kosong = ? where id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setBoolean(1, kodeRuang.getRuang().getKosong() == true);
+        preparedStatement.setInt(2, kodeRuang.getRuang().getId());
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
         connection.close();
     }
     

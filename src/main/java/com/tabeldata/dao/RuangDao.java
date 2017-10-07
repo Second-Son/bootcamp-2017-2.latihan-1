@@ -119,5 +119,27 @@ public class RuangDao {
         statement.close();
         connection.close();
     }
+
+    public Ruang fingById(Integer kodeRuang) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource dataSource = koneksiDatabase.getDataSource();
+        Connection connection = dataSource.getConnection();
+        
+        String sql = "select id, no_ruangan, kosong from latihan_1.ruang where id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, kodeRuang);
+        ResultSet resultSet = statement.executeQuery();
+        
+        Ruang ruang = new Ruang();
+        if(resultSet.next()){
+            ruang.setId(resultSet.getInt("id"));
+            ruang.setNoRuang(resultSet.getString("no_ruangan"));
+            ruang.setKosong(resultSet.getBoolean("kosong"));
+        }
+        resultSet.close();
+        statement.close();
+        connection.close();
+        return ruang;
+    }
     
 }
