@@ -31,7 +31,7 @@
                     <input type="text" name="nama" id="namaDokter" placeholder="Nama Dokter.."/>
                 </div><br>
                 <div>
-                    <label for="alamat"><b>Spesialis Dokter :</b></label><br>
+                    <label for="spesialis"><b>Spesialis Dokter :</b></label><br>
                     <input type="text" name="spesialis" id="spesialis" placeholder="Spesialis Dokter.."/>
                 </div><br>
                 <div>

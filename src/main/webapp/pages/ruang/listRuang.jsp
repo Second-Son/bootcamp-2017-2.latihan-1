@@ -42,7 +42,14 @@
                         <td>${index.count}</td>
                         <td>${sebuahRuang.id}</td>
                         <td>${sebuahRuang.noRuang}</td>
-                        <td>${sebuahRuang.kosong}</td>
+                        <td>
+                        <c:if test="${sebuahRuang.kosong == false}">
+                            <c:out value="PENUH"></c:out>
+                        </c:if>
+                        <c:if test="${sebuahRuang.kosong == true}">
+                            <c:out value="TERSEDIA"></c:out>
+                        </c:if>
+                        </td>
                         <td>
                             <a href="${pageContext.servletContext.contextPath}/ruang/edit?kodeRuang=${sebuahRuang.id}" ><button class="buttont button2">Edit</button></a>
                             <a href="${pageContext.servletContext.contextPath}/ruang/delete?kodeRuang=${sebuahRuang.id}" ><button class="buttont button3">Delete</button></a>

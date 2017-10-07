@@ -32,7 +32,7 @@
                     <input type="text" name="nama" id="namaDokter" value="${dokter.nama}"/>
                 </div><br>
                 <div>
-                    <label for="alamat"><b>Spesialis Dokter :</b></label><br>
+                    <label for="spesialis"><b>Spesialis Dokter :</b></label><br>
                     <input type="text" name="spesialis" id="spesialis" value="${dokter.spesialis}"/>
                 </div><br>
                 <div>

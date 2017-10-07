@@ -28,15 +28,15 @@
         <form action="${pageContext.servletContext.contextPath}/pasien/new" method="post">
             <div>
                 <label for="nama"><b>Nama Pasien :</b></label><br>
-                <input type="text" name="nama" id="namaPasien"/>
+                <input type="text" name="nama" id="namaPasien" placeholder="Nama Pasien.."/>
             </div><br>
             <div>
                 <label for="alamat"><b>Alamat Pasien :</b></label><br>
-                <input type="text" name="alamat" id="alamatPasien"/>
+                <input type="text" name="alamat" id="alamatPasien" placeholder="Alamat Pasien.."/>
             </div><br>
             <div>
                 <label for="tanggalLahir"><b>Tanggal Lahir :</b></label><br>
-                <input type="text" name="tanggalLahir" id="tanggalLahir"/>
+                <input type="text" class="date" name="tanggalLahir" id="tanggalLahir"  placeholder="yyyy-mm-dd (harus sesuai...)"/>
             </div><br>
             <div>
                 <button type="submit" class="button1 button2">Kirim</button>

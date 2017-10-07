@@ -27,12 +27,16 @@
             <h1>Tambah Ruang</h1>
             <form action="${pageContext.servletContext.contextPath}/ruang/new" method="post">
                 <div>
-                    <label for="nama"><b>Nomer Ruangan :</b></label><br>
-                    <input type="text" name="noRuang" id="noRuang"/>
+                    <label for="ruang"><b>Nomer Ruangan :</b></label><br>
+                    <input type="text" name="noRuang" id="noRuang" placeholder="No Ruangan.."/>
                 </div><br>
                 <div>
-                    <label for="alamat"><b>Status Kosong/Tidak :</b></label><br>
-                    <input type="text" name="kosong" id="Kosong"/>
+                    <label for="kosong"><b>
+                        <input type="radio" name="kosong" id="Kosong" value="true">TERSEDIA
+                        </b></label>
+                    <label><b>
+                        <input type="radio" name="kosong" id="Kosong" value="false">PENUH
+                        </b></label>
                 </div><br>
                 <div>
                     <button type="submit" class="button1 button2">Kirim</button>
