@@ -121,13 +121,28 @@ public class RawatDao {
         DataSource dataSource = koneksiDatabase.getDataSource();
         Connection connection = dataSource.getConnection();
         
-        String sql = "update latihan_1.ruang set kosong = ? where id = ?";
+        String sql = "update latihan_1.ruang set kosong = true where id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setBoolean(1, kodeRuang.getRuang().getKosong() == true);
-        preparedStatement.setInt(2, kodeRuang.getRuang().getId());
+        preparedStatement.setInt(1, kodeRuang.getRuang().getId());
         preparedStatement.executeUpdate();
         preparedStatement.close();
+        connection.close();
+    }
+
+    public void deletes(Integer kodeRawat) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource datasource = koneksiDatabase.getDataSource();
+        Connection connection = datasource.getConnection();
+        
+        String sql = "delete from latihan_1.rawat where id = ?";
+        
+        PreparedStatement statement = connection.prepareStatement(sql);
+
+        statement.setInt(1, kodeRawat);
+        
+        statement.executeUpdate();
+        statement.close();
         connection.close();
     }
     

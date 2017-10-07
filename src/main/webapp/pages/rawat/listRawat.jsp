@@ -48,7 +48,14 @@ Author     : iyus
                 <td>${t.waktuRegistrasi}</td>
                 <td>${t.waktuCheckout}</td>
                 <td>
-                    <a href="${pageContext.servletContext.contextPath}/rawat/checkout?kodeRawat=${t.id}&kodeRuang=${t.ruang.id}" ><button class="buttont button3">Checkout</button></a>
+                    
+                    <c:if test="${t.waktuCheckout == null}">
+                        <a href="${pageContext.servletContext.contextPath}/rawat/checkout?kodeRawat=${t.id}&kodeRuang=${t.ruang.id}" ><button class="buttont button3"><b>Checkout</b></button></a>    
+                        
+                    </c:if>
+                    <c:if test="${t.waktuCheckout != null}">
+                        <a href="${pageContext.servletContext.contextPath}/rawat/delete?kodeRawat=${t.id}&kodeRuang=${t.ruang.id}" ><button class="buttont button4"><b>Delete</b></button></a>
+                    </c:if>
                 </td>
             </tr>                    
             </c:forEach>
