@@ -18,7 +18,7 @@
         <div class="nav">
           <ul>
             <li class="rawat"><a href="/latihan-1/rawat/">Rawat</a></li>
-            <li class="pasien"><a href="/latihan-1/pasien/">pasien</a></li>
+            <li class="pasien"><a href="/latihan-1/pasien/">Pasien</a></li>
             <li class="dokter"><a href="/latihan-1/dokter/">Dokter</a></li>
             <li class="ruangan"><a class="active" href="/latihan-1/ruang/">Ruangan</a></li>
           </ul>
@@ -44,8 +44,8 @@
                         <td>${sebuahRuang.noRuang}</td>
                         <td>${sebuahRuang.kosong}</td>
                         <td>
-                            <a href="${pageContext.servletContext.contextPath}/ruang/edit?kodeRuang=${sebuahRuang.id}" >Edit</a>
-                            <a href="${pageContext.servletContext.contextPath}/ruang/delete?kodeRuang=${sebuahRuang.id}" >Delete</a>
+                            <a href="${pageContext.servletContext.contextPath}/ruang/edit?kodeRuang=${sebuahRuang.id}" ><button class="buttont button2">Edit</button></a>
+                            <a href="${pageContext.servletContext.contextPath}/ruang/delete?kodeRuang=${sebuahRuang.id}" ><button class="buttont button3">Delete</button></a>
                         </td>
                     </tr>
                     

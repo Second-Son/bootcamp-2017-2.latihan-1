@@ -18,7 +18,7 @@
         <div class="nav">
           <ul>
             <li class="rawat"><a href="/latihan-1/rawat/">Rawat</a></li>
-            <li class="pasien"><a href="/latihan-1/pasien/">pasien</a></li>
+            <li class="pasien"><a href="/latihan-1/pasien/">Pasien</a></li>
             <li class="dokter"><a class="active" href="/latihan-1/dokter/">Dokter</a></li>
             <li class="ruangan"><a href="/latihan-1/ruang/">Ruangan</a></li>
           </ul>
@@ -44,8 +44,8 @@
                         <td>${seorangDokter.nama}</td>
                         <td>${seorangDokter.spesialis}</td>
                         <td>
-                            <a href="${pageContext.servletContext.contextPath}/dokter/edit?kodeDokter=${seorangDokter.id}" >Edit</a>
-                            <a href="${pageContext.servletContext.contextPath}/dokter/delete?kodeDokter=${seorangDokter.id}" >Delete</a>
+                            <a href="${pageContext.servletContext.contextPath}/dokter/edit?kodeDokter=${seorangDokter.id}" ><button class="buttont button2"><span>Edit</span></button></a>
+                            <a href="${pageContext.servletContext.contextPath}/dokter/delete?kodeDokter=${seorangDokter.id}" ><button class="buttont button3">Delete</button></a>
                         </td>
                     </tr>
                     

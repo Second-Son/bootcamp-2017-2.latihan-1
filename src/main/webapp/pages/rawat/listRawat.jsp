@@ -18,7 +18,7 @@ Author     : iyus
     <div class="nav">
       <ul>
         <li class="rawat"><a class="active" href="/latihan-1/rawat/">Rawat</a></li>
-        <li class="pasien"><a href="/latihan-1/pasien/">pasien</a></li>
+        <li class="pasien"><a href="/latihan-1/pasien/">Pasien</a></li>
         <li class="dokter"><a href="/latihan-1/dokter/">Dokter</a></li>
         <li class="ruangan"><a href="/latihan-1/ruang/">Ruangan</a></li>
       </ul>
@@ -29,7 +29,7 @@ Author     : iyus
     <table class="yusuf-table yusuf-table-rounded">
         <thead>
             <tr>
-                <th>No</th>>
+                <th>No</th>
                 <th>Nama Pasien</th>
                 <th>Nama Dokter</th>
                 <th>Ruangan Rawat</th>
@@ -48,7 +48,7 @@ Author     : iyus
                 <td>${t.waktuRegistrasi}</td>
                 <td>${t.waktuCheckout}</td>
                 <td>
-                    <a href="${pageContext.servletContext.contextPath}/rawat/checkout?kodeRawat=${t.id}&kodeRuang=${t.ruang.id}" >Checkout</a>
+                    <a href="${pageContext.servletContext.contextPath}/rawat/checkout?kodeRawat=${t.id}&kodeRuang=${t.ruang.id}" ><button class="buttont button3">Checkout</button></a>
                 </td>
             </tr>                    
             </c:forEach>

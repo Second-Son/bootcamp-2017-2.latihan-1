@@ -17,7 +17,7 @@
         <div class="nav">
           <ul>
             <li class="rawat"><a href="/latihan-1/rawat/">Rawat</a></li>
-            <li class="pasien"><a href="/latihan-1/pasien/">pasien</a></li>
+            <li class="pasien"><a href="/latihan-1/pasien/">Pasien</a></li>
             <li class="dokter"><a href="/latihan-1/dokter/">Dokter</a></li>
             <li class="ruangan"><a class="active" href="/latihan-1/ruang/">Ruangan</a></li>
           </ul>
@@ -36,8 +36,8 @@
                     <input type="text" name="kosong" id="Kosong" value="${ruang.kosong}"/>
                 </div><br>
                 <div>
-                    <button type="submit">Kirim</button>
-                    <button type="reset">Reset</button>
+                    <button type="submit" class="button1 button2">Kirim</button>
+                    <button type="reset" class="button1 button3">Reset</button>
                 </div>
             </form>
             </center>

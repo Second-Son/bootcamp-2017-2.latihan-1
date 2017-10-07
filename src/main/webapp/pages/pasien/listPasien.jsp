@@ -19,14 +19,14 @@
         <div class="nav">
           <ul>
             <li class="rawat"><a href="/latihan-1/rawat/">Rawat</a></li>
-            <li class="pasien"><a class="active" href="/latihan-1/pasien/">pasien</a></li>
+            <li class="pasien"><a class="active" href="/latihan-1/pasien/">Pasien</a></li>
             <li class="dokter"><a href="/latihan-1/dokter/">Dokter</a></li>
             <li class="ruangan"><a href="/latihan-1/ruang/">Ruangan</a></li>
           </ul>
         </div>
       </header>
         <center>
-        <h1>LIST PASIEN</h1>
+        <h1>List Pasien</h1>
         <table class="yusuf-table yusuf-table-rounded" cellpadding="10">
             <thead>
                 <tr>
@@ -47,8 +47,8 @@
                         <td>${seorangPasien.alamat}</td>
                         <td>${seorangPasien.tanggalLahir}</td>
                         <td>
-                            <a href="${pageContext.servletContext.contextPath}/pasien/edit?kodePasien=${seorangPasien.id}" >Edit</a>
-                            <a href="${pageContext.servletContext.contextPath}/pasien/delete?kodePasien=${seorangPasien.id}" >Delete</a>
+                            <a href="${pageContext.servletContext.contextPath}/pasien/edit?kodePasien=${seorangPasien.id}" ><button class="buttont button2">Edit</button></a>
+                            <a href="${pageContext.servletContext.contextPath}/pasien/delete?kodePasien=${seorangPasien.id}" ><button class="buttont button3">Delete</button></a>
                         </td>
                     </tr>
                     
