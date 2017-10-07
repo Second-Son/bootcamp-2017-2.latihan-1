@@ -5,6 +5,7 @@
  */
 package com.tabeldata.model;
 
+import java.sql.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ public class Rawat {
     private Pasien pasien;
     private Dokter dokter;
     private Ruang ruang;
-    private Integer waktuRegistrasi;
-    private Integer waktuCheckout;
+    private Timestamp waktuRegistrasi;
+    private Timestamp waktuCheckout;
     
 }
