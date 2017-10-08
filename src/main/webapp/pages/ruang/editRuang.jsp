@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -34,22 +33,12 @@
                 </div><br>
                 
                 <div>
-                <c:if test="${ruang.kosong == false}">
                     <label for="kosong"><b>
-                        <input type="radio" name="kosong" id="Kosong">TERSEDIA
+                        <input type="radio" name="kosong" id="Kosong" value="true">TERSEDIA
                         </b></label>
                     <label><b>
-                        <input type="radio" name="kosong" id="Kosong" checked>PENUH
+                        <input type="radio" name="kosong" id="Kosong" value="false">PENUH
                         </b></label>
-                </c:if>
-                <c:if test="${ruang.kosong == true}">
-                    <label for="kosong"><b>
-                        <input type="radio" name="kosong" id="Kosong" checked>TERSEDIA
-                        </b></label>
-                    <label><b>
-                        <input type="radio" name="kosong" id="Kosong">PENUH
-                        </b></label>
-                </c:if>
                 </div><br>
                 <div>
                     <button type="submit" class="button1 button2">Kirim</button>

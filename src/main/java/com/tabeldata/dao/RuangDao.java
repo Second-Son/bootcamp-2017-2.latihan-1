@@ -141,5 +141,19 @@ public class RuangDao {
         connection.close();
         return ruang;
     }
+
+    public void checkout(Integer kodeRuang) throws SQLException {
+        KoneksiDatabase koneksiDatabase = new KoneksiDatabase();
+        DataSource dataSource = koneksiDatabase.getDataSource();
+        Connection connection = dataSource.getConnection();
+        
+        String sql = "update latihan_1.ruang set kosong = true where id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, kodeRuang);
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
+        connection.close();
+    }
     
 }
