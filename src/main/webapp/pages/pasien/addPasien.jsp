@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -36,7 +37,7 @@
             </div><br>
             <div>
                 <label for="tanggalLahir"><b>Tanggal Lahir :</b></label><br>
-                <input type="text" class="date" name="tanggalLahir" id="tanggalLahir"  placeholder="yyyy-mm-dd (harus sesuai...)"/>
+                <input type="text" class="date" name="tanggalLahir" id="tanggalLahir" placeholder="YYYY-MM-DD" pattern="^(19[5-9][0-9]|20[0-4][0-9]|2050)[-/](0?[1-9]|1[0-2])[-/](0?[1-9]|[12][0-9]|3[01])$"/>
             </div><br>
             <div>
                 <button type="submit" class="button1 button2">Kirim</button>
