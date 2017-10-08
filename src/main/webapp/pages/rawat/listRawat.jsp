@@ -25,7 +25,7 @@ Author     : iyus
     </div>
   </header>
     <center>
-    <h1>List Rawat</h1>
+    <h1>List Dan Log Pasien Rawat Rumah Sakit</h1>
     <table class="yusuf-table yusuf-table-rounded">
         <thead>
             <tr>
