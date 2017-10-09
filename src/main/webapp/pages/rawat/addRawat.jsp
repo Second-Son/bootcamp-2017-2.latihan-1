@@ -52,13 +52,18 @@
              <div class="select-style">
              <select name="ruangId" id="ruangId">
                 <c:forEach items="${listRuang}" var="ru">
-                    <option value="${ru.id}">${ru.noRuang} 
+                        <c:if test="${ru.kosong == true}">
+                            <option value="${ru.id}">${ru.noRuang}</option>
+                        </c:if>
+                            
+        <%-- DI BAWAH INI BUAT NAMPILIN YANG ADA TEKS KOSONG ATAU TERSEDIA --%>
+                    <%-- <option value="${ru.id}">${ru.noRuang} 
                         <c:if test="${ru.kosong == false}">
                             <c:out value="PENUH"></c:out>
                         </c:if>
                         <c:if test="${ru.kosong == true}">
                             <c:out value="TERSEDIA"></c:out>
-                        </c:if></option>
+                        </c:if></option> --%>
                 </c:forEach>
             </select>
              </div>
